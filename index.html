@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Умар</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="script.js">
+</head>
+<body>
+  <div class="container">
+    <h1 id="name">Умар</h1>
+    <p id="info" data-key="short_info">Краткая информация<br>2009 · Узбекистан · узбек</p>
+
+    <button onclick="window.location.href='mailto:umar@example.com'" data-key="contact_btn">Связаться со мной</button>
+
+    <div class="card">
+      <h2 data-key="about_title">О себе</h2>
+      <p data-key="about_text">Человек просто живущий с целями и принципами...</p>
+    </div>
+
+    <div class="card">
+      <h2 data-key="hobby_title">Хобби</h2>
+      <p data-key="hobby_text">Бокс, Английский, IT, Арабский, плавание, борьба, качалка</p>
+    </div>
+
+    <div class="card">
+      <h2 data-key="favourites_title">Избранное</h2>
+      <button onclick="toggleDetail('food')">🍽️ <span data-key="food_title">Еда</span></button>
+      <div class="detail" id="food"><p data-key="food_desc">Плов, лаваш — еда силы и традиции.</p></div>
+
+      <button onclick="toggleDetail('color')">🎨 <span data-key="color_title">Цвет</span></button>
+      <div class="detail" id="color"><p data-key="color_desc">Тёмно-синий — как море. Холод и сила.</p></div>
+
+      <button onclick="toggleDetail('book')">📚 <span data-key="book_title">Книги</span></button>
+      <div class="detail" id="book"><p data-key="book_desc">Люблю психологию и романы. Глубина и чувство.</p></div>
+    </div>
+
+    <div class="card">
+      <h2 data-key="works_title">Мои произведения</h2>
+      <button onclick="showStory()" data-key="story_title">Первые слёзы</button>
+    </div>
+
+    <div class="card">
+      <button onclick="window.location.href='https://instagram.com/umar.isss'" data-key="channels">Мои каналы</button>
+    </div>
+
+    <div class="controls">
+      <select onchange="switchLang(this.value)">
+        <option value="ru">Русский</option>
+        <option value="en">English</option>
+        <option value="uz">Oʻzbekcha</option>
+        <option value="ar">العربية</option>
+      </select>
+      <button onclick="toggleTheme()" data-key="theme_toggle">🌓</button>
+    </div>
+
+    <p class="secret-link" onclick="openSecret()" data-key="secret_btn">Секрет</p>
+  </div>
+
+  <div id="storyModal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeModal()" class="close">&times;</span>
+      <h2 data-key="story_title">Первые слёзы</h2>
+      <div class="lang-tabs">
+        <button onclick="showLangVersion('ru')">🇷🇺</button>
+        <button onclick="showLangVersion('en')">🇬🇧</button>
+        <button onclick="showLangVersion('uz')">🇺🇿</button>
+        <button onclick="showLangVersion('ar')">🇸🇦</button>
+      </div>
+      <div id="storyContent">
+        <p class="hint">💡 Подсказка: сюда вставь текст рассказа на русском.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="secretModal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeModal()" class="close">&times;</span>
+      <h2 data-key="secret_zone">Секретная зона</h2>
+      <input type="password" id="secretInput" placeholder="Введите код" />
+      <button onclick="checkPassword()" data-key="submit">Войти</button>
+      <div id="secretContent" style="display:none;">
+        <p class="hint">💡 Вставь 1 фото, 1 аудио и текст</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+  <script> src="script.js"</script>
+</body>
+</html>
